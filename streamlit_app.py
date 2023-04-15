@@ -10,7 +10,9 @@ data = pd.DataFrame(response.json())
 
 # Affichage de l'interface utilisateur
 st.title("Vulnérabilités les plus exploitées")
-product = st.selectbox("Produit", data.product.unique())
+#product = st.selectbox("Produit", data.product.unique())
+product_options = list(data.product.unique())
+product = st.sidebar.selectbox("Produit", product_options)
 
 # Création du graphique
 filtered_data = data[data.product == product]
