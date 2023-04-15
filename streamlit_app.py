@@ -12,11 +12,11 @@ def get_data():
     data.to_csv("data.csv", index=False)
 
 # Planifier la récupération des données chaque jour à 8h
-schedule.every().day.at("08:00").do(get_data)
+#schedule.every().day.at("08:00").do(get_data)
 
 # Attendre jusqu'à 8h pour récupérer les données pour la première fois
-while True:
-    if time.strftime("%H:%M:%S") == "08:00:00":
+#while True:
+    #if time.strftime("%H:%M:%S") == "08:00:00":
         get_data()
         break
     time.sleep(1)
